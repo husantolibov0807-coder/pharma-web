@@ -2,79 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Drug AI Analysis</title>
   <link rel="stylesheet" href="style.css" />
-  
-  <!-- 🔥 TELEGRAM WEBAPP JS (MUHIM) -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 
-  <div id="app">
-    <!-- AI ANALYSIS (LIGHT / MEDICAL) -->
-    <section id="analysis-section">
-      <h1 id="drug-name">💊 Loading...</h1>
-      <p id="mnn"></p>
+  <!-- AI ANALYSIS (LIGHT / MEDICAL) -->
+  <section id="analysis-section">
+    <h1 id="drug-name">💊 Loading...</h1>
+    <p id="mnn"></p>
 
-      <pre id="analysis-text">
+    <pre id="analysis-text">
 Loading analysis...
-      </pre>
+    </pre>
 
-      <h3>Analogs</h3>
-      <div id="analogs"></div>
-    </section>
+    <h3>Analogs</h3>
+    <div id="analogs"></div>
+  </section>
 
-    <!-- TEST SECTION (DARK MODE) -->
-    <section id="test-section">
-      <h2>Quick Mind Test</h2>
-      <div id="test-content">
-        Press start to begin
-      </div>
-      <button id="start-test">Start Test</button>
-    </section>
-  </div>
+  <!-- TEST SECTION (DARK MODE) -->
+  <section id="test-section">
+    <h2>Quick Mind Test</h2>
+    <div id="test-content">
+      Press start to begin
+    </div>
+    <button id="start-test">Start Test</button>
+  </section>
 
-  <script>
-    // ================= TELEGRAM WEBAPP INIT =================
-    // 1. Telegram WebApp obyektini tekshirish
-    if (window.Telegram && Telegram.WebApp) {
-      const tg = Telegram.WebApp;
-      
-      // 2. WebApp ni expand qilish (to‘liq ekran)
-      tg.expand();
-      
-      // 3. Telegramga ready signal yuborish
-      tg.ready();
-      
-      // 4. Background rangini o‘zgartirish (optional)
-      tg.setBackgroundColor("#ffffff"); // Oq rang
-      
-      // 5. Header rangini o‘zgartirish (optional)
-      tg.setHeaderColor("#2ea6ff");
-      
-      console.log('Telegram WebApp initialized', tg.initData);
-      
-      // 6. Agar user ma’lumotlari kerak bo‘lsa:
-      if (tg.initDataUnsafe.user) {
-        const user = tg.initDataUnsafe.user;
-        console.log('User:', user);
-        // User ID ni backendga yuborish mumkin
-      }
-      
-      // 7. Back button (agar kerak bo‘lsa)
-      tg.BackButton.show();
-      tg.BackButton.onClick(() => {
-        tg.close();
-      });
-    } else {
-      console.warn('Not in Telegram WebApp. Running in browser mode.');
-      // Oddiy brauzerda ishlaganda kerak bo‘lsa
-      document.body.classList.add('browser-mode');
-    }
-  </script>
-
-  <!-- SIZNING ASOSIY JS -->
   <script src="app.js"></script>
 </body>
 </html>
